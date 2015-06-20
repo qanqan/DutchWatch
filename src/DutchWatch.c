@@ -198,7 +198,7 @@ static void handle_minute_tick(struct tm *tick_time, TimeUnits units_changed) {
 static void init() {
   window = window_create();
   window_stack_push(window, true);
-  window_set_background_color(window, GColorRed ); //  GColorBlack
+  window_set_background_color(window, GColorRed ); //  GColorBlack  GColorRed
 
 	// Custom fonts
 	lightFont = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_GOTHAM_LIGHT_31));

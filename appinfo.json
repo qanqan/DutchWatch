@@ -9,6 +9,12 @@
     "resources": {
         "media": [
             {
+                "file": "images/DutchWatchB48.png",
+                "menuIcon": true,
+                "name": "DutchWatchB48",
+                "type": "png"
+            },
+            {
                 "file": "images/DutchWatch144.png",
                 "name": "DutchWatch144",
                 "type": "png"
@@ -16,12 +22,6 @@
             {
                 "file": "images/DutchWatch48.png",
                 "name": "DutchWatch48",
-                "type": "png"
-            },
-            {
-                "file": "images/DutchWatchB48.png",
-                "menuIcon": true,
-                "name": "DutchWatchB48",
                 "type": "png"
             },
             {
@@ -42,7 +42,7 @@
         "basalt"
     ],
     "uuid": "662f920e-441d-4ef8-b257-01608d89d1b7",
-    "versionLabel": "1",
+    "versionLabel": "1.1",
     "watchapp": {
         "watchface": true
     }

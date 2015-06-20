@@ -80,37 +80,47 @@ void time_to_words(int hours, int minutes, char* words, size_t length) {
   size_t remaining = length;
   memset(words, 0, length);
   int iminutes = 60 - minutes;
+  int uurtekst = 0;
 
-  if (minutes > 30) {
+  if (minutes > 45) {
     hours+=1;
-    if (iminutes > 16 && iminutes < 20) {
-      remaining -= append_number(words, iminutes);
-      remaining -= append_string(words, remaining, "-tien-");
-    } else if (iminutes < 17 || (iminutes % 10) == 0) {
-      remaining -= append_string(words, remaining, " -");
-      remaining -= append_number(words, iminutes);     
-    } else {
-      remaining -= append_number(words, iminutes);
-    }
+    iminutes = 60 - minutes;
+    remaining -= append_string(words, remaining, " -");
+    remaining -= append_number(words, iminutes);     
     remaining -= append_string(words, remaining, "-voor-");
+  } else if (minutes > 44) {
+    hours+=1;
+    remaining -= append_string(words, remaining, " -kwart-voor-");
+  } else if (minutes > 30) {
+    hours+=1;
+    iminutes = minutes - 30;
+    remaining -= append_number(words, iminutes);     
+    remaining -= append_string(words, remaining, "-over-half-");
+  } else if (minutes > 29) {
+    hours+=1;
+    remaining -= append_string(words, remaining, " - -half-");
+  } else if (minutes > 15) {
+    hours+=1;
+    iminutes = 30 - minutes;
+    remaining -= append_number(words, iminutes);     
+    remaining -= append_string(words, remaining, "-voor-half-");
+  } else if (minutes > 14) {
+    remaining -= append_string(words, remaining, " -kwart-over-");
   } else if (minutes > 0) {
-    if (minutes > 16 && minutes < 20) {
-      remaining -= append_number(words, minutes);
-      remaining -= append_string(words, remaining, "-tien-");
-    } else if (minutes < 17 || (minutes % 10) == 0) {
-      remaining -= append_string(words, remaining, " -");
-      remaining -= append_number(words, minutes);     
-    } else {
-      remaining -= append_number(words, minutes);
-    }
+    remaining -= append_string(words, remaining, " -");
+    remaining -= append_number(words, minutes);     
     remaining -= append_string(words, remaining, "-over-");
   } else {
-      remaining -= append_string(words, remaining, " - - -");      
+    remaining -= append_string(words, remaining, " - -");      
+    uurtekst += 1;  
   }
   if (hours == 0 || hours == 12) {
     remaining -= append_string(words, remaining, TEENS[2]);
   } else {
     remaining -= append_number(words, hours % 12);
+  }
+  if (uurtekst>0) {
+    remaining -= append_string(words, remaining, "-uur");          
   }
   remaining -= append_string(words, remaining, "-");
 }
