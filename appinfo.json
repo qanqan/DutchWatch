@@ -1,0 +1,49 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "Wip Interactive/GJL",
+    "longName": "DutchWatch",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+                "file": "images/DutchWatch144.png",
+                "name": "DutchWatch144",
+                "type": "png"
+            },
+            {
+                "file": "images/DutchWatch48.png",
+                "name": "DutchWatch48",
+                "type": "png"
+            },
+            {
+                "file": "images/DutchWatchB48.png",
+                "menuIcon": true,
+                "name": "DutchWatchB48",
+                "type": "png"
+            },
+            {
+                "file": "fonts/gotham_light_31.ttf",
+                "name": "FONT_GOTHAM_LIGHT_31",
+                "type": "font"
+            },
+            {
+                "file": "fonts/gotham_bold_36.ttf",
+                "name": "FONT_GOTHAM_BOLD_36",
+                "type": "font"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "DutchWatch",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "662f920e-441d-4ef8-b257-01608d89d1b7",
+    "versionLabel": "1",
+    "watchapp": {
+        "watchface": true
+    }
+}
