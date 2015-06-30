@@ -82,6 +82,7 @@ void time_to_words(int hours, int minutes, char* words, size_t length) {
   int iminutes = 60 - minutes;
   int uurtekst = 0;
 
+  hours = (hours > 12) ? hours-12 : hours;
   if (minutes > 45) {
     hours+=1;
     iminutes = 60 - minutes;
@@ -114,11 +115,13 @@ void time_to_words(int hours, int minutes, char* words, size_t length) {
     remaining -= append_string(words, remaining, " - -");      
     uurtekst += 1;  
   }
-  if (hours == 0 || hours == 12) {
-    remaining -= append_string(words, remaining, TEENS[2]);
+
+  if (hours == 12 || hours == 0) {
+    remaining -= append_string(words, remaining, TEENS[2]);        
   } else {
     remaining -= append_number(words, hours % 12);
-  }
+  } 
+  
   if (uurtekst>0) {
     remaining -= append_string(words, remaining, "-uur");          
   }

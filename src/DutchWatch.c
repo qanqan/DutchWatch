@@ -104,7 +104,7 @@ static bool needToUpdateLine(Line *line, char lineStr[2][BUFFER_SIZE], char *nex
 // Update screen based on new time
 static void display_time(struct tm *t)
 {
-	// The current time text will be stored in the following 3 strings
+	// The current time text will be stored in the following 4 strings
 	char textLine1[BUFFER_SIZE];
 	char textLine2[BUFFER_SIZE];
 	char textLine3[BUFFER_SIZE];
